@@ -32,7 +32,8 @@ module.exports = config => {
           debug('Rasa response', response)
           message.intent = response.intent
           message.entities = response.entities
-          // @TODO: add other info like confidence?
+          // @TODO: The check for confidence should be done in the middleware and not after.
+          message.confidence = response.confidence
           next()
         })
     },
