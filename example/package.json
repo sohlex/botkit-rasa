@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "botkit": "^0.5.4",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "botkit-rasa": "file:botkit-rasa-1.0.0.tgz"
   }
 }

@@ -31,20 +31,17 @@ This bot demonstrates many of the core features of Botkit:
 
   Open another terminal and from the example directory, run the commands:
 
-    -> npm i
+    -> npm install
     -> slack_token= <token> node bot.js
 
 # USE THE BOT:
-
-  Train a "hello" intent inside Api.ai.  Give it a bunch of examples
-  of how someone might say "Hello" to your bot.
 
   Find your bot inside Slack to send it a direct message.
 
   Say: "Hello"
 
-  The bot should reply "Hello!" If it didn't, your intent hasn't been
-  properly trained - check out the api.ai console!
+  The bot should reply "Hello!" If it didn't, there's a problem with
+  Rasa NLU configuration, check the bot and Rasa console for errors.
 
   Make sure to invite your bot into other channels using /invite @<my bot>!
 
