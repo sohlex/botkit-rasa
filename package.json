@@ -1,0 +1,33 @@
+{
+  "name": "botkit-rasa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohlex/botkit-rasa.git"
+  },
+  "keywords": [
+    "botkit",
+    "rasa",
+    "rasa nlu",
+    "rasanlu",
+    "bot",
+    "bots",
+    "slack",
+    "messenger"
+  ],
+  "author": "Alessio Calafiore <alessio.calafiore@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sohlex/botkit-rasa/issues"
+  },
+  "homepage": "https://github.com/sohlex/botkit-rasa#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "request-promise": "^4.2.1"
+  }
+}
