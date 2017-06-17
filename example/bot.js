@@ -13,8 +13,6 @@ This bot demonstrates many of the core features of Botkit:
 * Receive messages based on "spoken" patterns
 * Reply to messages
 * Use the conversation system to ask questions
-* Use the built in storage system to store and retrieve information
-  for a user.
 
 # RUN THE BOT:
 
@@ -22,13 +20,19 @@ This bot demonstrates many of the core features of Botkit:
 
     -> http://my.slack.com/services/new/bot
 
-  Get a Api.ai token from api.ai
+  Clone the repository and move into the example directory:
 
-    -> https://console.api.ai/api-client/#/editAgent/<your-agent-id>
+    -> git clone https://github.com/sohlex/botkit-rasa.git
 
-  Run your bot from the command line:
+  Open a terminal and from the example directory run the command:
+  (ignore the errors on the first run, everything is ok :)
 
-    apiai=<api-token> token=<token> node apiai_example_bot.js
+    -> npm run rasa:start
+
+  Open another terminal and from the example directory, run the commands:
+
+    -> npm i
+    -> slack_token= <token> node bot.js
 
 # USE THE BOT:
 
@@ -54,19 +58,14 @@ This bot demonstrates many of the core features of Botkit:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-if (!process.env.token) {
+if (!process.env.slack_token) {
   console.log('Error: Specify token in environment')
   process.exit(1)
 }
 
-if (!process.env.apiai) {
-  console.log('Error: Specify apiai in environment')
-  process.exit(1)
-}
-
 var Botkit = require('botkit')
-var apiai = require('./src/botkit-middleware-apiai')({
-  token: process.env.apiai
+var rasa = require('../src/middleware-rasa')({
+  rasa_uri: 'http://localhost:5000'
 })
 
 var controller = Botkit.slackbot({
@@ -74,13 +73,13 @@ var controller = Botkit.slackbot({
 })
 
 var bot = controller.spawn({
-  token: process.env.token
+  token: process.env.slack_token
 }).startRTM()
-console.log(apiai)
-controller.middleware.receive.use(apiai.receive)
+console.log(rasa)
+controller.middleware.receive.use(rasa.receive)
 
-/* note this uses example middlewares defined above */
-controller.hears(['hello'], 'direct_message,direct_mention,mention', apiai.hears, function (bot, message) {
+/* this uses rasa middleware defined above */
+controller.hears(['greet'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
   console.log(JSON.stringify(message))
   console.log('hello')
   bot.reply(message, 'Hello!')

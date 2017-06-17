@@ -15,15 +15,17 @@ controller.hears(['my_intent'],'message_received', rasa.hears, function(bot, mes
 });
 ```
 
-## What it does
-Using this Rasa NLU middleware plugin for Botkit causes every message that is sent to your bot to be first sent to Rasa NLU for processing. The results of the call to Rasa NLU are added into the incoming message as `message.intents` and `message.entities`, and will match the results of this Rasa NLU API call.
+To run the example:
+* Clone this repository
+* Move into the new directory and run the command `npm run rasa:start` (ignore the errors you see on the console in the first run, everything is ok :)
 
-Using the Rasa NLU hears middleware tells Botkit to look for Rasa NLU intents information, and match them using this information instead of the built in pattern matching function.
+## What it does
+Using this Rasa NLU middleware plugin for Botkit causes every message that is sent to your bot to be first sent to Rasa NLU for processing. The results of the call to Rasa NLU are added into the incoming message as `message.intents`, `message.entities` and `message.confidence`.
+
+Using the Rasa NLU `hears` middleware tells Botkit to look for Rasa NLU intents information, and match them using this information instead of the built in pattern matching function.
 
 You must create an intent in the understandings area of Rasa NLU and train it to register certain expressions.
 
-I.e "intent" -> "weather"
+I.e "intent" -> "greet"
 
-Expression: "What is the weather?" and that maps to the weather intent.
-
-Unless you want to directly access the information returned by wit, you can use this transparently by enabling bot the receive and hears middlewares.
+Expression: "Hello!" and that maps to the `greet` intent.
