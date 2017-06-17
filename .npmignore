@@ -1,0 +1,6 @@
+example
+node_modules
+.vscode/*
+.gitignore
+.DS_Store
+npm-debug.log
