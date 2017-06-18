@@ -31,21 +31,19 @@ leveraging Rasa NLU plugin:
 * Reply to messages
 
 ### Prerequisites
-* Install [Docker](https://www.docker.com/)
 * Install [Node.js](https://nodejs.org/)
 
 ### Run the example bot
-Get a Bot token from Slack (you will need this later when launching the bot from the command line):
+Get Rasa NLU up and running by checking out [their repository](https://github.com/RasaHQ/rasa_nlu) and following the [instructions to setup](https://github.com/RasaHQ/rasa_nlu#setup) a Rasa NLU instance.
+At this point you should have a Rasa NLU instance up and running.
+
+Now get a Bot token from Slack (you will need this later when launching the bot from the command line):
 * http://my.slack.com/services/new/bot
 
-Clone the repository and move into the example directory:
+Clone this repository and move into the example directory:
 * `git clone https://github.com/sohlex/botkit-rasa.git`
 
-Open a terminal and from the example directory run the command:
-(ignore the errors on the first run, everything is ok :)
-* `npm run rasa:start`
-
-Open another terminal and from the example directory, run the commands (`TOKEN` is the one that you got in the first step):
+Open another terminal and from the example directory, run the commands (`TOKEN` is the one that you got before from the slack website):
 * `npm install`
 * `slack_token=<TOKEN> node bot.js`
 
@@ -67,7 +65,7 @@ Furthermore, Botkit has many features for building cool and useful bots!
 Read all about it [here](http://howdy.ai/botkit).
 
 ## What this middleware does
-Using this Rasa NLU middleware plugin for Botkit causes every message that is sent to your bot to be first sent to Rasa NLU for processing. The results of the call to Rasa NLU are added into the incoming message as `message.intents`, `message.entities` and `message.confidence`.
+Using this Rasa NLU middleware plugin for Botkit causes every message that is sent to your bot to be first sent to Rasa NLU for processing. The results of the call to Rasa NLU are added into the incoming message as `message.intents` and `message.entities`.
 
 Using the Rasa NLU `hears` middleware tells Botkit to look for Rasa NLU intents information, and match them using this information instead of the built in pattern matching function.
 

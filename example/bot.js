@@ -16,20 +16,21 @@ leveraging Rasa NLU plugin:
 
 # RUN THE BOT:
 
-  Get a Bot token from Slack:
+  Get Rasa NLU up and running by checking out their repository
+
+    -> https://github.com/RasaHQ/rasa_nlu
+
+  Follow the instructions on the README.md file and start Rasa NLU
+
+  Then get a Bot token from Slack:
 
     -> http://my.slack.com/services/new/bot
 
-  Clone the repository and move into the example directory:
+  Clone the botkit-rasa repository and move into the example directory:
 
     -> git clone https://github.com/sohlex/botkit-rasa.git
 
-  Open a terminal and from the example directory run the command:
-  (ignore the errors on the first run, everything is ok :)
-
-    -> npm run rasa:start
-
-  Open another terminal and from the example directory, run the commands:
+  Open the terminal and from the example directory, run the commands:
 
     -> npm install
     -> slack_token= <token> node bot.js
