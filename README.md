@@ -2,7 +2,7 @@
 
 This plugin provides Botkit developers a way to use the [Rasa NLU](https://rasa.ai/) open source, self hosted natural language API.
 
-## Setup
+## Setup in your project
 
 Install the plugin using the npm package
 
@@ -21,7 +21,7 @@ controller.hears(['my_intent'],'message_received', rasa.hears, function(bot, mes
 });
 ```
 
-## Example bot
+## Example Slack bot
 In the `example` directory there's a fully functional Slack bot sample.
 
 This bot demonstrates some core features of Botkit
@@ -45,7 +45,7 @@ Open another terminal and from the example directory, run the commands:
 * `npm install`
 * `slack_token=<TOKEN> node bot.js`
 
-# USE THE BOT:
+### Use the bot
 Find your bot inside Slack to send it a direct message.
 
 Say: "Hello"
@@ -55,7 +55,7 @@ Rasa NLU configuration, check the bot and Rasa console for errors.
 
 Make sure to invite your bot into other channels using /invite @<my bot>!
 
-### Extend the bot:
+### Extend the bot
 
 If this middleware doesn't satisfy your needs, you can use it as inspiration for your implementations or contribute to this project!
 Furthermore, Botkit has many features for building cool and useful bots!
