@@ -12,7 +12,7 @@ module.exports = config => {
 
   var middleware = {
     receive: (bot, message, next) => {
-      if (message.is_echo) {
+      if (!message.text || message.is_echo) {
         next()
         return
       }
@@ -32,15 +32,13 @@ module.exports = config => {
           debug('Rasa response', response)
           message.intent = response.intent
           message.entities = response.entities
-          // @TODO: The check for confidence should be done in the middleware and not after.
-          message.confidence = response.confidence
           next()
         })
     },
 
     hears: (patterns, message) => {
       return patterns.some(pattern => {
-        if (message.intent === pattern) {
+        if (message.intent.name === pattern) {
           debug('Rasa intent matched hear pattern', message.intent, pattern)
           return true
         }
