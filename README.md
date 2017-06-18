@@ -30,6 +30,10 @@ leveraging Rasa NLU plugin:
 * Receive messages based on "spoken" patterns
 * Reply to messages
 
+### Prerequisites
+* Install [Docker](https://www.docker.com/)
+* Install [Node.js](https://nodejs.org/)
+
 ### Run the example bot
 Get a Bot token from Slack (you will need this later when launching the bot from the command line):
 * http://my.slack.com/services/new/bot
