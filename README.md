@@ -45,7 +45,7 @@ Open a terminal and from the example directory run the command:
 (ignore the errors on the first run, everything is ok :)
 * `npm run rasa:start`
 
-Open another terminal and from the example directory, run the commands:
+Open another terminal and from the example directory, run the commands (`TOKEN` is the one that you got in the first step):
 * `npm install`
 * `slack_token=<TOKEN> node bot.js`
 
