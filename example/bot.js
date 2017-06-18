@@ -7,12 +7,12 @@
 
 This is a sample Slack bot built with Botkit.
 
-This bot demonstrates many of the core features of Botkit:
+This bot demonstrates some core features of Botkit
+leveraging Rasa NLU plugin:
 
 * Connect to Slack using the real time API
 * Receive messages based on "spoken" patterns
 * Reply to messages
-* Use the conversation system to ask questions
 
 # RUN THE BOT:
 
@@ -60,16 +60,16 @@ if (!process.env.slack_token) {
   process.exit(1)
 }
 
-var Botkit = require('botkit')
-var rasa = require('../src/middleware-rasa')({
+const Botkit = require('botkit')
+const rasa = require('../src/middleware-rasa')({
   rasa_uri: 'http://localhost:5000'
 })
 
-var controller = Botkit.slackbot({
+const controller = Botkit.slackbot({
   debug: true
 })
 
-var bot = controller.spawn({
+const bot = controller.spawn({
   token: process.env.slack_token
 }).startRTM()
 console.log(rasa)
