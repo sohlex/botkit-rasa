@@ -12,7 +12,10 @@ module.exports = config => {
 
   var middleware = {
     receive: (bot, message, next) => {
-      if (!message.text || message.is_echo) {
+      // is_echo: can be true for facebook bots when the echo webhook is subscribed
+      // bot_id: keep an eye https://github.com/howdyai/botkit/pull/694
+      // if bot_id is present, the message comes from another bot
+      if (!message.text || message.is_echo || message.bot_id) {
         next()
         return
       }
