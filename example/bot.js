@@ -63,7 +63,8 @@ if (!process.env.slack_token) {
 
 const Botkit = require('botkit')
 const rasa = require('../src/middleware-rasa')({
-  rasa_uri: 'http://localhost:5000'
+  rasa_uri: 'http://localhost:5000',
+  rasa_model: undefined
 })
 
 const controller = Botkit.slackbot({
