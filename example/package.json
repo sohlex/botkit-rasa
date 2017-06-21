@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "botkit": "^0.5.4",
-    "botkit-rasa": "^1.0.5"
+    "botkit-rasa": "^1.0.6"
   }
 }
