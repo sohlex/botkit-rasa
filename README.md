@@ -22,14 +22,14 @@ controller.hears(['my_intent'],'message_received', rasa.hears, function(bot, mes
 ```
 
 ## Example Slack bot
-In the `example` directory there's a fully functional Slack bot sample.
+In the `example` directory there's a fully functional Slack bot and facebook bot sample.
 
 This bot demonstrates some core features of Botkit
 leveraging Rasa NLU plugin:
 * Connect to Slack using the real time API
 * Receive messages based on "spoken" patterns
 * Reply to messages
-
+* similar features for facebook bot.
 ### Prerequisites
 * Install [Node.js](https://nodejs.org/)
 
@@ -46,7 +46,8 @@ Clone this repository and move into the example directory:
 Open another terminal and from the example directory, run the commands (`TOKEN` is the one that you got before from the slack website):
 * `npm install`
 * `slack_token=<TOKEN> node bot.js`
-
+For facebook_bot
+* `page_token=<MY PAGE TOKEN> verify_token=<MY_VERIFY_TOKEN> node facebook_bot.js [--lt [--ltsubdomain CUSTOM_SUBDOMAIN]]`
 ### Use the bot
 Find your bot inside Slack to send it a direct message.
 
