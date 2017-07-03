@@ -67,32 +67,6 @@ controller.setupWebserver(process.env.port || 3000, function(err, webserver) {
     });
 });
 
-
-/*controller.hears(['book-hotel'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
-  console.log(JSON.stringify(message))
-  console.log('this is an hotel booking intent')
-  bot.reply(message, 'This is an hotel booking intent')
-})
-controller.hears(['weather'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
-  console.log(JSON.stringify(message))
-  console.log('this is an weather intent')
-  bot.reply(message, 'This is an weather intent')
-})
-controller.hears(['affirm'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
-  console.log(JSON.stringify(message))
-  console.log('this is an affirm intent')
-  bot.reply(message, 'This is an affirm intent')
-})
-controller.hears(['goodbye'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
-  console.log(JSON.stringify(message))
-  console.log('this is an bye intent')
-  bot.reply(message, 'This is an bye intent')
-})
-controller.hears(['greet'], 'direct_message,direct_mention,mention', rasa.hears, function (bot, message) {
-  console.log(JSON.stringify(message))
-  console.log('hello')
-  bot.reply(message, 'Hello!!!')
-}) */
 controller.hears(['greet'], 'message_received,facebook_postback',rasa.hears, function(bot, message) {
     bot.reply(message,'Hello!')
 });
