@@ -26,7 +26,7 @@ module.exports = config => {
         uri: `${config.rasa_uri}/parse`,
         body: {
           q: message.text,
-          project: config.rasa_project
+          project: `${config.rasa_project}`
         },
         json: true
       }
