@@ -21,6 +21,11 @@
     "messenger"
   ],
   "author": "Alessio Calafiore <alessio.calafiore@gmail.com>",
+  "contributors": [
+    { "name" : "Ben",
+      "email" : "ben@howdy.ai"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sohlex/botkit-rasa/issues"
