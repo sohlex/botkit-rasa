@@ -27,6 +27,7 @@ module.exports = config => {
         body: {
           q: message.text,
           project: `${config.rasa_project}`
+          model: `${config.rasa_model}`
         },
         json: true
       }
